@@ -13,22 +13,30 @@ const MyNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavLink className="nav-link" to="/">
+            <NavLink 
+            style={({isActive})=> ({color: isActive && "red"})}
+            className="nav-link" to="/">
               Home
             </NavLink>
-            <NavLink className="nav-link" to="/teacher">
+            <NavLink 
+            style={({isActive})=> ({fontSize: isActive && "50px"})}
+            className="nav-link" to="/teacher">
               Teacher
             </NavLink>
-            <NavLink className="nav-link" to="/courses">
+            <NavLink 
+            style={({isActive})=> ({border: isActive && "1 px solid blue"})}
+            className="nav-link" to="/courses">
               Courses
             </NavLink>
-            <NavLink className="nav-link" to="/contact">
+            <NavLink 
+            style={({isActive})=> ({backgroundColor: isActive && "red"})}
+            className="nav-link" to="/contact">
               Contact
             </NavLink>
             <NavLink className="nav-link" to="/paths">
               Paths
             </NavLink>
-           <Nav.Link href="">Github</Nav.Link>
+           <Nav.Link target="blank" href="">Github</Nav.Link>
 
           </Nav>
         </Navbar.Collapse>

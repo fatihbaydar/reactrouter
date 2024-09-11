@@ -8,6 +8,7 @@ import CourseCard from '../pages/CourseCard';
 import ContactForm from '../pages/ContactForm';
 import Paths from '../pages/Paths';
 import NotFound from "../pages/NotFound"
+import PrivateRouter from "./PrivateRouter"
 
 const App = () => {
   return (
@@ -19,8 +20,18 @@ const App = () => {
 
     <Route exact path='/' element={<Home/>} />
     <Route path='/teacher' element={<Teacher/>} />
-    <Route path='/courses' element={<CourseCard/>} />
-    <Route path='/contact' element={<ContactForm/>} />
+
+    <Route path='/courses' element={<PrivateRouter/>}>
+    <Route path='' element={<CourseCard/>} />
+    </Route>
+    
+
+    <Route path='/contact' element={PrivateRouter}>
+       <Route path='' element={<ContactForm/>} /> 
+    </Route>
+    
+
+
     <Route path='/paths' element={<Paths/>} />
     <Route path="*" element={<NotFound/>} />
    </Routes>
@@ -35,3 +46,5 @@ export default App
 //   {/* "/" (ana yol) tüm yollara dahil edilmiştir, bu nedenle onu "/" ile
 //           başlayan diğer yollardan ayırt etmek için exact anahtar kelimesine
 //           sahip olması gerekir . */}
+
+// {/* şifre kontrolü ile girilebilecek sayfalar için PrivateRouter a yönlendirdir */}
