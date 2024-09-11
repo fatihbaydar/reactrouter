@@ -9,7 +9,7 @@ import "./slider.css"
 
 const Slider = () => {
   return (
-    <Carousel>
+    <Carousel fade autoPlay={true} interval={5000}>
       <Carousel.Item>
         <img className="w-100" src={isa} alt="" />
       </Carousel.Item>
@@ -24,3 +24,5 @@ const Slider = () => {
 }
 
 export default Slider
+
+  //! fade=soluklaşarak diğer resme geç, autoPlay={true} otomatik resim değiş, interval={5000} 5 saniyede bir değiş. slide={false} otomatik geçişi iptal et
