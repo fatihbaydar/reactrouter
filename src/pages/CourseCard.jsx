@@ -3,21 +3,16 @@ import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/esm/Col";
 import Button from "react-bootstrap/Button";
-import data from "../data"
-
-
+import data from "../data";
+import { useNavigate } from "react-router";
 
 const CourseCard = () => {
-
-
-
-  
+  const navigate=useNavigate()
   return (
     <Container>
       <Row className="g-3 text-center">
         {data.map((a) => {
-          const{id,name,img,text}=a
-       
+          const { id, name, img, text } = a;
 
           return (
             <Col
@@ -30,8 +25,8 @@ const CourseCard = () => {
                   <Card.Title>{name} </Card.Title>
                   <Card.Text>{text}</Card.Text>
                   <Button 
-
-variant="primary">DETAILS</Button>
+                  onClick={() => navigate(`/courses/${name}`)}
+                  variant="primary">DETAILS</Button>
                 </Card.Body>
               </Card>
             </Col>
