@@ -13,6 +13,7 @@ import CardDetails from "../pages/CardDetails";
 import TeacherDetails from "../pages/TeacherDetails" 
 import AWS from "../pages/AWS";
 import FS from "../pages/FS";
+import Login from "../pages/Login";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <MyNavbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route path="/login" element={<Login/>}/>
           <Route path="/teacher" element={<Teacher />} />
           <Route path="/teacher/:idd" element={<TeacherDetails />} />
 
