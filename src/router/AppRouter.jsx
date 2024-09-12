@@ -11,6 +11,8 @@ import NotFound from "../pages/NotFound";
 import PrivateRouter from "./PrivateRouter";
 import CardDetails from "../pages/CardDetails";
 import TeacherDetails from "../pages/TeacherDetails" 
+import AWS from "../pages/AWS";
+import FS from "../pages/FS";
 
 const App = () => {
   return (
@@ -33,7 +35,12 @@ const App = () => {
             <Route path="" element={<ContactForm />} />
           </Route>
 
-          <Route path="/paths" element={<Paths />} />
+          {/* <Route path="/paths" element={<Paths />} /> */}
+        <Route path="/paths" element= {<Paths/>}>
+        <Route path="/paths/fs" element= {<FS/>}/>
+        <Route path="AWS" element= {<AWS/>}/>
+        </Route>
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
