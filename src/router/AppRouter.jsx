@@ -10,6 +10,7 @@ import Paths from "../pages/Paths";
 import NotFound from "../pages/NotFound";
 import PrivateRouter from "./PrivateRouter";
 import CardDetails from "../pages/CardDetails";
+import TeacherDetails from "../pages/TeacherDetails" 
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/teacher" element={<Teacher />} />
+          <Route path="/teacher/:idd" element={<TeacherDetails />} />
+
 
           {/* <Route path='/courses' element={<PrivateRouter/>}> */}
           <Route path="/courses" element={<CourseCard />} />
